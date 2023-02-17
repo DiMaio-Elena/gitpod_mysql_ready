@@ -8,9 +8,9 @@ mydb = mysql.connector.connect(
   password=""
 )
 
-#mycursor = mydb.cursor()
+mycursor = mydb.cursor()
 
-#mycursor.execute("CREATE DATABASE Animali")
+mycursor.execute("CREATE DATABASE Animali")
 
 
 
