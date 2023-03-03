@@ -9,7 +9,8 @@ mydb = mysql.connector.connect(
 )
 
 mycursor = mydb.cursor()
-mycursor.execute = ("SELECT * FROM Mammiferi")
+mycursor.execute("SELECT * FROM Mammiferi")
+
 listaAnimali = mycursor.fetchall()
 
 
