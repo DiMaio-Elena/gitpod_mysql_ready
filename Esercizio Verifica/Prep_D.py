@@ -9,16 +9,27 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-i=0
 domanda = input("vuoi aggiungere un animale? (si/no)")
 
-while domanda =="si":
-    i = i+1
-    nome = input("Inserisci il nome del nuovo animale")
-    eta = int(input("Inserisci il eta del nuovo animale"))
-    
-    #iNSRTE
+while domanda == "si":
+
+    Nome = input("Inserisci il nome del nuovo animale")
+    Eta = int(input("Inserisci eta del nuovo animale"))
+    Peso = int(input("Inserisci il peso"))
+    Razza = input("Inserisci la razza")
+
+    sql = "INSERT INTO Mammiferi ( Nome_Proprio, Razza, Peso,  Eta ) VALUES (%s, %s, %s, %s)"
+    val = [
+      (Nome, Razza, Peso, Eta ), 
+    ]
+
     #COMMIT
 
     domanda = input("vuoi aggiungere un animale? (si/no)")
+
+mycursor.executemany(sql, val)
+
+
+
+
         
